@@ -10,6 +10,8 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
+var currentGameType = gameType.twoPlayer
+
 class GameViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -20,6 +22,8 @@ class GameViewController: UIViewController {
             if let scene = SKScene(fileNamed: "GameScene") {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
+                
+                //scene.size = view.bounds.size
                 
                 // Present the scene
                 view.presentScene(scene)

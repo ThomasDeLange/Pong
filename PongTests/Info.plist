@@ -16,6 +16,14 @@
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>LLPIXEL3.ttf</string>
+	</array>
+	<key>CFBundleDisplayName</key>
+	<string></string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 </dict>

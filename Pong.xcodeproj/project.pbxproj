@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E92819BB208E7F5D00E9158C /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92819B8208E7F5C00E9158C /* Matrix.swift */; };
+		E92819BC208E7F5D00E9158C /* NeuralNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92819B9208E7F5C00E9158C /* NeuralNetwork.swift */; };
+		E92819BD208E7F5D00E9158C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92819BA208E7F5D00E9158C /* Extensions.swift */; };
+		E953FBD5208CE3B500BCFF7C /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E953FBD4208CE3B500BCFF7C /* MenuViewController.swift */; };
 		E98F0F9D208C831A00C5E5F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F0F9C208C831A00C5E5F9 /* AppDelegate.swift */; };
 		E98F0F9F208C831A00C5E5F9 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E98F0F9E208C831A00C5E5F9 /* GameScene.sks */; };
 		E98F0FA1208C831A00C5E5F9 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = E98F0FA0208C831A00C5E5F9 /* Actions.sks */; };
@@ -17,6 +21,7 @@
 		E98F0FAD208C831C00C5E5F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E98F0FAB208C831C00C5E5F9 /* LaunchScreen.storyboard */; };
 		E98F0FB8208C831D00C5E5F9 /* PongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F0FB7208C831D00C5E5F9 /* PongTests.swift */; };
 		E98F0FC3208C831D00C5E5F9 /* PongUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F0FC2208C831D00C5E5F9 /* PongUITests.swift */; };
+		E98F0FD3208CDD6D00C5E5F9 /* LLPIXEL3.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E98F0FD2208CDD6D00C5E5F9 /* LLPIXEL3.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E92819B8208E7F5C00E9158C /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
+		E92819B9208E7F5C00E9158C /* NeuralNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeuralNetwork.swift; sourceTree = "<group>"; };
+		E92819BA208E7F5D00E9158C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E953FBD4208CE3B500BCFF7C /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		E98F0F99208C831A00C5E5F9 /* Pong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E98F0F9C208C831A00C5E5F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E98F0F9E208C831A00C5E5F9 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -53,6 +62,7 @@
 		E98F0FBE208C831D00C5E5F9 /* PongUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PongUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E98F0FC2208C831D00C5E5F9 /* PongUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PongUITests.swift; sourceTree = "<group>"; };
 		E98F0FC4208C831D00C5E5F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E98F0FD2208CDD6D00C5E5F9 /* LLPIXEL3.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LLPIXEL3.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +90,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E92819BE208E7F6D00E9158C /* NeuralNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				E92819BA208E7F5D00E9158C /* Extensions.swift */,
+				E92819B8208E7F5C00E9158C /* Matrix.swift */,
+				E92819B9208E7F5C00E9158C /* NeuralNetwork.swift */,
+			);
+			path = NeuralNetwork;
+			sourceTree = "<group>";
+		};
 		E98F0F90208C831A00C5E5F9 = {
 			isa = PBXGroup;
 			children = (
@@ -103,12 +123,15 @@
 		E98F0F9B208C831A00C5E5F9 /* Pong */ = {
 			isa = PBXGroup;
 			children = (
+				E92819BE208E7F6D00E9158C /* NeuralNetwork */,
+				E98F0FD2208CDD6D00C5E5F9 /* LLPIXEL3.ttf */,
 				E98F0F9C208C831A00C5E5F9 /* AppDelegate.swift */,
 				E98F0F9E208C831A00C5E5F9 /* GameScene.sks */,
 				E98F0FA0208C831A00C5E5F9 /* Actions.sks */,
 				E98F0FA2208C831A00C5E5F9 /* GameScene.swift */,
 				E98F0FA4208C831A00C5E5F9 /* GameViewController.swift */,
 				E98F0FA6208C831A00C5E5F9 /* Main.storyboard */,
+				E953FBD4208CE3B500BCFF7C /* MenuViewController.swift */,
 				E98F0FA9208C831C00C5E5F9 /* Assets.xcassets */,
 				E98F0FAB208C831C00C5E5F9 /* LaunchScreen.storyboard */,
 				E98F0FAE208C831C00C5E5F9 /* Info.plist */,
@@ -239,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E98F0FA8208C831A00C5E5F9 /* Main.storyboard in Resources */,
+				E98F0FD3208CDD6D00C5E5F9 /* LLPIXEL3.ttf in Resources */,
 				E98F0F9F208C831A00C5E5F9 /* GameScene.sks in Resources */,
 				E98F0FAA208C831C00C5E5F9 /* Assets.xcassets in Resources */,
 				E98F0FAD208C831C00C5E5F9 /* LaunchScreen.storyboard in Resources */,
@@ -268,8 +292,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E98F0FA3208C831A00C5E5F9 /* GameScene.swift in Sources */,
+				E92819BB208E7F5D00E9158C /* Matrix.swift in Sources */,
 				E98F0FA5208C831A00C5E5F9 /* GameViewController.swift in Sources */,
 				E98F0F9D208C831A00C5E5F9 /* AppDelegate.swift in Sources */,
+				E953FBD5208CE3B500BCFF7C /* MenuViewController.swift in Sources */,
+				E92819BC208E7F5D00E9158C /* NeuralNetwork.swift in Sources */,
+				E92819BD208E7F5D00E9158C /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,7 +477,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Pong;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Pong.Thomas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -467,7 +495,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Pong;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Pong.Thomas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

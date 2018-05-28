@@ -1,24 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A278a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9hm-uv-j8j">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Game View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="fRk-8j-4W1">
+            <objects>
+                <navigationController storyboardIdentifier="navigationViewController" navigationBarHidden="YES" id="9hm-uv-j8j" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YHP-gh-yLz">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mQe-lG-GGa">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="DJ8-lQ-pX8" kind="relationship" relationship="rootViewController" id="er1-ES-8oI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hEy-vJ-QAC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1721" y="32"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="vtm-pU-k6V">
+            <objects>
+                <viewController id="DJ8-lQ-pX8" customClass="MenuViewController" customModule="Pong" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Akq-qB-PVz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="loe-uW-Kk4">
+                                <rect key="frame" x="156" y="258" width="62" height="150"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xmi-PW-NZC">
+                                        <rect key="frame" x="0.0" y="0.0" width="62" height="30"/>
+                                        <state key="normal" title="2 players"/>
+                                        <connections>
+                                            <action selector="setTwoPlayerMode:" destination="DJ8-lQ-pX8" eventType="touchUpInside" id="Zf0-fF-DYk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OiQ-3h-z8h">
+                                        <rect key="frame" x="0.0" y="30" width="62" height="30"/>
+                                        <state key="normal" title="Easy"/>
+                                        <connections>
+                                            <action selector="setEasyMode:" destination="DJ8-lQ-pX8" eventType="touchUpInside" id="tat-F7-2Bf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVE-zJ-KZ9">
+                                        <rect key="frame" x="0.0" y="60" width="62" height="30"/>
+                                        <state key="normal" title="Medium"/>
+                                        <connections>
+                                            <action selector="setEasyMode:" destination="DJ8-lQ-pX8" eventType="touchUpInside" id="5Ib-OQ-6kY"/>
+                                            <action selector="setMediumMode:" destination="DJ8-lQ-pX8" eventType="touchUpInside" id="wMM-E3-v6Y"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wm-Dk-rnG">
+                                        <rect key="frame" x="0.0" y="90" width="62" height="30"/>
+                                        <state key="normal" title="Hard"/>
+                                        <connections>
+                                            <action selector="setHardMode:" destination="DJ8-lQ-pX8" eventType="touchUpInside" id="CHc-8m-9AS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LR3-la-2YQ">
+                                        <rect key="frame" x="0.0" y="120" width="62" height="30"/>
+                                        <state key="normal" title="AI"/>
+                                        <connections>
+                                            <action selector="aiMode:" destination="DJ8-lQ-pX8" eventType="touchUpInside" id="grO-HL-D1y"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="loe-uW-Kk4" firstAttribute="centerY" secondItem="Akq-qB-PVz" secondAttribute="centerY" id="LyE-RP-cZr"/>
+                            <constraint firstItem="loe-uW-Kk4" firstAttribute="centerX" secondItem="Akq-qB-PVz" secondAttribute="centerX" id="Nkg-9A-aAG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8Lb-Ve-wQZ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Pyp-8w-9NS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KWu-iU-OMQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-751.20000000000005" y="29.23538230884558"/>
+        </scene>
+        <!--Title-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gameViewController" id="BV1-FR-VrT" customClass="GameViewController" customModule="Pong" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="ouo-7u-U8e"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="28" y="32"/>
         </scene>
     </scenes>
 </document>
