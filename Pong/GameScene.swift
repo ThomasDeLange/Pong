@@ -138,6 +138,9 @@ class GameScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
         
+        let enoughTimesTrained = 10000
+        var timesTrained = 0
+        
         switch currentGameType{
         case .easy:
             enemy.run(SKAction.moveTo(x: ball.position.x, duration: 1.3))
@@ -156,7 +159,10 @@ class GameScene: SKScene {
             
         case .AI:
             player.run(SKAction.moveTo(x: ball.position.x, duration: 0.5))
-            trainBrain()
+            if (timesTrained < enoughTimesTrained){
+                timesTrained += 1
+                trainBrain()
+            }
             enemy.run(SKAction.moveTo(x: calculateMoveTo() , duration: 0.0))
             break
         }

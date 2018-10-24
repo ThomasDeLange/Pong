@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9hm-uv-j8j">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9hm-uv-j8j">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -37,10 +37,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="loe-uW-Kk4">
-                                <rect key="frame" x="156" y="258" width="62" height="150"/>
+                                <rect key="frame" x="156.5" y="258.5" width="62" height="150"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xmi-PW-NZC">
                                         <rect key="frame" x="0.0" y="0.0" width="62" height="30"/>
+                                        <gestureRecognizers/>
                                         <state key="normal" title="2 players"/>
                                         <connections>
                                             <action selector="setTwoPlayerMode:" destination="DJ8-lQ-pX8" eventType="touchUpInside" id="Zf0-fF-DYk"/>
@@ -79,6 +80,7 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="loe-uW-Kk4" firstAttribute="centerY" secondItem="Akq-qB-PVz" secondAttribute="centerY" id="LyE-RP-cZr"/>
                             <constraint firstItem="loe-uW-Kk4" firstAttribute="centerX" secondItem="Akq-qB-PVz" secondAttribute="centerX" id="Nkg-9A-aAG"/>
@@ -99,13 +101,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="G9w-cf-LNW" appends="YES" id="mtN-hj-DhA"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="ouo-7u-U8e"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="up" id="G9w-cf-LNW">
+                    <connections>
+                        <segue destination="DJ8-lQ-pX8" kind="show" id="rYL-hN-kze"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="28" y="32"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="rYL-hN-kze"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -225,13 +225,16 @@
 				TargetAttributes = {
 					E98F0F98208C831A00C5E5F9 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1000;
 					};
 					E98F0FB2208C831C00C5E5F9 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1000;
 						TestTargetID = E98F0F98208C831A00C5E5F9;
 					};
 					E98F0FBD208C831D00C5E5F9 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1000;
 						TestTargetID = E98F0F98208C831A00C5E5F9;
 					};
 				};
@@ -479,7 +482,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Pong.Thomas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -497,7 +500,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Pong.Thomas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -517,7 +520,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.PongTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pong.app/Pong";
 			};
@@ -538,7 +541,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.PongTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pong.app/Pong";
 			};
@@ -558,7 +561,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.PongUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Pong;
 			};
@@ -578,7 +581,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.PongUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Pong;
 			};

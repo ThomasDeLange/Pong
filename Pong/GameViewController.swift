@@ -13,7 +13,7 @@ import GameplayKit
 var currentGameType = gameType.twoPlayer
 
 class GameViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
