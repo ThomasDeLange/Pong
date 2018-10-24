@@ -55,7 +55,7 @@ public class NeuralNetwork
         hiddenBias.randomize()
         outputBias.randomize()
         
-        self.learningRate = 0.2
+        self.learningRate = 0.001
         
         self.activationFunction = sigmoid
     }
