@@ -24,6 +24,9 @@ var screenCenter = CGPoint()
 
 var score = [Int]()
 
+let enoughTimesTrained = 8000
+var timesTrained = 0
+
 class GameScene: SKScene {
         
     override func didMove(to view: SKView) {
@@ -69,10 +72,6 @@ class GameScene: SKScene {
     
     func addScore(playerWhoWon : SKSpriteNode){
         
-//        if currentGameType == .AI{
-//            trainBrain()
-//        }
-        
         ball.position = CGPoint(x: screenCenter.x, y: screenCenter.y)
         ball.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
         
@@ -110,8 +109,7 @@ class GameScene: SKScene {
                 if location.y < 0 {
                     player.run(SKAction.moveTo(x: location.x, duration: 0.2))
                 }
-            }
-            else if currentGameType != .AI{
+            } else if currentGameType != .AI{
                 player.run(SKAction.moveTo(x: location.x, duration: 0.2))
             }
         }
@@ -138,8 +136,7 @@ class GameScene: SKScene {
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
         
-        let enoughTimesTrained = 10000
-        var timesTrained = 0
+
         
         switch currentGameType{
         case .easy:
@@ -159,10 +156,16 @@ class GameScene: SKScene {
             
         case .AI:
             player.run(SKAction.moveTo(x: ball.position.x, duration: 0.5))
+            
             if (timesTrained < enoughTimesTrained){
-                timesTrained += 1
+                timesTrained = timesTrained + 1
                 trainBrain()
             }
+            
+            if (timesTrained == enoughTimesTrained) {
+                print("ENOUGH TRAINED")
+            }
+            
             enemy.run(SKAction.moveTo(x: calculateMoveTo() , duration: 0.0))
             break
         }
@@ -191,19 +194,8 @@ class GameScene: SKScene {
         
         let moveTo = brainCGFloatOutput * 750
         
-        //print("output: \(brainCGFloatOutput), moveTo: \(moveTo)")
         return moveTo
         
-
-        //            var moveTo : CGFloat
-        //            if brainCGFloatOutput > 0.5 {
-        //                moveTo = enemy.position.x + 3
-        //            }else {
-        //                moveTo = enemy.position.x - 3
-        //
-        //            }
-        //            enemy.run(SKAction.moveTo(x: moveTo , duration: 0.0))
-        //
     }
 }
 
