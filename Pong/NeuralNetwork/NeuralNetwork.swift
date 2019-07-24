@@ -12,7 +12,6 @@ import Foundation
     
     var function : (Double) -> Double
     var dFunction : (Double) -> Double
-    
     init(function :  @escaping (Double) -> Double, dFunction : @escaping (Double) -> Double) {
         self.function = function
         self.dFunction = dFunction

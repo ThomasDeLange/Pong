@@ -15,16 +15,17 @@ var enemy = SKSpriteNode()
 var topScoreLabel = SKLabelNode()
 var bottomScoreLabel = SKLabelNode()
 
-let brain = NeuralNetwork(input: 1, hidden: 6, output: 1)
+let brain = NeuralNetwork(input: 2, hidden: 64, output: 1)
 
 let screenSize = UIScreen.main.bounds
 let screenWidth = screenSize.width
+let screenHeight = screenSize.height
 
 var screenCenter = CGPoint()
 
 var score = [Int]()
 
-let enoughTimesTrained = 8000
+let enoughTimesTrained = 10000
 var timesTrained = 0
 
 class GameScene: SKScene {
@@ -102,15 +103,20 @@ class GameScene: SKScene {
             
             let location = touch.location(in : self)
             
-            if currentGameType == .twoPlayer{
+            if (currentGameType == .twoPlayer) {
                 if location.y > 0{
                     enemy.run(SKAction.moveTo(x: location.x, duration: 0.2))
                 }
                 if location.y < 0 {
                     player.run(SKAction.moveTo(x: location.x, duration: 0.2))
                 }
-            } else if currentGameType != .AI{
+            } else if (currentGameType != .AI) {
                 player.run(SKAction.moveTo(x: location.x, duration: 0.2))
+            } else if currentGameType == .AI {
+                
+                trainBrain()
+                timesTrained += 1
+                print("TRAINED: \(timesTrained)")
             }
         }
     }
@@ -127,16 +133,19 @@ class GameScene: SKScene {
                 if location.y < 0 {
                     player.run(SKAction.moveTo(x: location.x, duration: 0.2))
                 }
-            }else if currentGameType != .AI{
+            } else if currentGameType != .AI{
                 player.run(SKAction.moveTo(x: location.x, duration: 0.2))
+            } else if currentGameType == .AI {
+                
+                trainBrain()
+                timesTrained += 1
+                print("TRAINED: \(timesTrained)")
             }
         }
     }
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
-        
-
         
         switch currentGameType{
         case .easy:
@@ -156,17 +165,20 @@ class GameScene: SKScene {
             
         case .AI:
             player.run(SKAction.moveTo(x: ball.position.x, duration: 0.5))
-            
-            if (timesTrained < enoughTimesTrained){
-                timesTrained = timesTrained + 1
-                trainBrain()
-            }
-            
-            if (timesTrained == enoughTimesTrained) {
-                print("ENOUGH TRAINED")
-            }
+
+//
+//            if (timesTrained < enoughTimesTrained && Int(currentTime) % trainInterval == 0){
+//                timesTrained = timesTrained + 1
+//                print(timesTrained)
+//                trainBrain()
+//            } else if (timesTrained == enoughTimesTrained) {
+//                print("ENOUGH TRAINED")
+//                timesTrained = timesTrained + 1
+//
+//            }
             
             enemy.run(SKAction.moveTo(x: calculateMoveTo() , duration: 0.0))
+            
             break
         }
         
@@ -179,8 +191,8 @@ class GameScene: SKScene {
     
     func trainBrain() {
         
-        let inputArray = [Double(ball.position.x / 750) ]
-        let targetArray = [Double(ball.position.x / 750) ]
+        let inputArray = [Double(ball.position.x / 750), Double(ball.position.y / 1326) ]
+        let targetArray = [Double(ball.position.x / 750)]
         brain.train(inputArray: inputArray, targetArray: targetArray)
         
         //print("ball: \(ball.position.x), input: \(inputArray[0])")
@@ -188,7 +200,7 @@ class GameScene: SKScene {
     }
     
     func calculateMoveTo() -> CGFloat{
-        let brainInput = [Double(ball.position.x / screenWidth) ]
+        let brainInput = [Double(ball.position.x / screenWidth), Double(ball.position.y / screenHeight)]
         var brainArrayOutput = brain.guess(inputArray: brainInput)
         let brainCGFloatOutput : CGFloat = CGFloat(brainArrayOutput[0])
         
